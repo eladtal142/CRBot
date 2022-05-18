@@ -22,4 +22,26 @@ Essentially, what it does is display the state of the game that the Bot decides 
 onto a java window. It does this by displaying a live video of the game, as well
 as displaying text to the screen and labeling certain parts.
 
+It gets this information from the bot class and decision class who make the calculations,
+as well as act upon them.
+
+`The Decider Class`
+
+The Decider class makes the final decisions that the bot performs onto the player screen.
+It needs to calculate which card would be the smartest to use every time the player has enough elixir
+to purchase a troop, and once it decides which troop is the best to play, it moves on to the next step. 
+
+After the bot decides, it uses an algorithm to calculate which position would be the best
+position to play the troop on, based on several different positions that that troop
+would normally be played.
+
+`The IdentifyCard class`
+
+The IdentifyCard class holds the basic methods to scan for troops on the board, and
+gives the Bot class access to the algorithms needed to perform searches and compare colors
+of everything on the board.
+
+It also stores the data for each type of card so that the bot is able to diffrentiate between
+different types of cards that the opponent places.
+
 

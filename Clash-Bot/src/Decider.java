@@ -1,5 +1,3 @@
-import java.awt.event.InputEvent;
-
 /*
  Author: Max Tran
  Date: 5/5/22
@@ -8,6 +6,8 @@ import java.awt.event.InputEvent;
  	Decides Where To Place Them,
  	Selects The Cards
  */
+
+import java.awt.event.InputEvent;
 
 public class Decider {
 
