@@ -23,6 +23,7 @@ import java.awt.Robot;
 public class Bot {
 	
 	  public static Robot bot;
+	  private static Decider decider;
 	  
 	  static double xscale = 1.53;
 	  static double yscale = 1.57;
@@ -56,6 +57,7 @@ public class Bot {
 		  Container c = w.getContentPane();
 		  c.add(new Window());
 		  w.setVisible(true);
+		  decider = new Decider();
 		  
 		  while (true) {
 			  BufferedImage player = getPlayer();
@@ -68,16 +70,19 @@ public class Bot {
 						  hand[i] = names[j];
 				  }
 			  }
-			  
 			  ArrayList<ArrayList<Integer>> positions = IdentifyCard.getPositions(player);
 			  ArrayList<String> cardNames = getNames(player, positions);
-			  
 			  //Update Window State
 			  Window.elixir = getElixir(player);
 			  Window.hand = hand;
 			  Window.positions = positions;
 			  Window.player = player; 
 			  Window.cardNames = cardNames;
+
+			  //Update Decider State
+			  decider.update();
+			  
+
 		  }
 		  
 	 }
